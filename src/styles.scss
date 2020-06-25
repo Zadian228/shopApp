@@ -1,0 +1,109 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.features {
+  width: 1250px;
+  margin: 0 auto;
+
+}
+
+.featurestext {
+  text-align: center;
+  font-size: 28px;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: bold;
+  padding-top: 100px;
+
+}
+
+.featurebox {
+  display: flex;
+
+}
+
+.feature-item {
+  text-align: center;
+  width: 310px;
+  float: left;
+
+
+
+}
+
+.feature-item p {
+  text-align: center;
+  line-height: 2em;
+}
+
+
+
+.featurebox ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+
+
+.cont {
+  text-align: center;
+  padding-top: 100px;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.contOrder {
+  padding-top: 100px;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+
+.picture-text {
+  font-size: 20px;
+
+}
+
+.img-settings {
+  width: 200px;
+  height: 200px;
+}
+
+
+.size-height {
+  width: 200px;
+  height: 250px;
+}
+
+.cart-size-height {
+  width: 40px;
+  height: 50px;
+}
+
+
+.mat-list-base .mat-list-item {
+  color: black;
+}
+
+
+
+.buttonplace {
+  float: right;
+  margin-left: 100px;
+}
+
+.floattext {
+  float: left;
+}
+
+.floattext h3 {
+  font-weight: 500;
+}
+
+.textcolor {
+  color: black;
+}

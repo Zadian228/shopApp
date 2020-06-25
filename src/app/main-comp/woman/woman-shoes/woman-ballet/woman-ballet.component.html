@@ -1,0 +1,19 @@
+<app-header></app-header>
+<br>
+<div class="features">
+  <div class="featurestext">
+    <h2>Женские Балетки</h2>
+  </div>
+  <div class="featurebox">
+    <ul *ngFor="let womanBallets of womanBallet;">
+      <li class="feature-item">
+        <img src="{{ womanBallets.imgPath }}"
+             class="size-height" routerLink="woman-bags">
+        <br>
+        <p class="picture-text" routerLink="woman-bags">{{ womanBallets.name }}</p>
+        <br>
+        <p class="picture-text">{{ womanBallets.cash }} Р <button  mat-button (click)="addWomanBalletsToCart(womanBallets)">В корзину</button></p>
+      </li>
+    </ul>
+  </div>
+</div>

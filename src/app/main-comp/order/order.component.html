@@ -1,0 +1,55 @@
+<app-header></app-header>
+
+<div class="contOrder">
+  <div class="features">
+    <mat-list role="list" *ngFor="let carts of cart;">
+      <mat-list-item role="listitem">
+        {{ carts.name }} {{ carts.cash }} P
+        <img src="{{ carts.imgPath }}"
+             class="cart-size-height">
+      </mat-list-item>
+    </mat-list>
+
+    <form class="form-inline" [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+      <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label  for="address"><p class="textcolor">Адрес</p></mat-label>
+          <input matInput type="text" id="address" placeholder="Адрес" formControlName="address">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label  for="firstName"><p class="textcolor">Имя</p></mat-label>
+          <input matInput type="text" id="firstName" placeholder="Имя" formControlName="firstName">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label  for="secondName"><p class="textcolor">Фамилия</p></mat-label>
+          <input matInput type="text" id="secondName" placeholder="Фамилия" formControlName="secondName">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label  for="city"><p class="textcolor">Город</p></mat-label>
+          <input matInput type="text" id="city" placeholder="Город" formControlName="city">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label for="email"><p class="textcolor">Email</p></mat-label>
+          <input matInput type="text" id="email" placeholder="Email" formControlName="email">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label for="phone"><p class="textcolor">Телефон</p></mat-label>
+          <input matInput type="number" id="phone" placeholder="Телефон" formControlName="phone">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label for="cash" disabled><h3>Сумма:  Р </h3></mat-label>
+          <input matInput type="number" id="cash" formControlName="cash">
+        </mat-form-field>
+      </div>
+
+      <mat-button-toggle routerLink="/order-success" type="submit">Подтвердить Заказ</mat-button-toggle>
+    </form>
+  </div>
+</div>
+

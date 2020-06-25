@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+<div class="cont">
+  <div class="features">
+    <mat-list role="list" *ngFor="let carts of cart; let i = index">
+        <mat-list-item role="listitem" class="mat-list-text">
+          {{ carts.name }} {{ carts.cash }} P
+          <img src="{{ carts.imgPath }}"
+          class="cart-size-height">
+          <button type="button" aria-label="Close" class="buttonplace"
+                  (click)="onDeleteCartItem(i)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </mat-list-item>
+    </mat-list>
+    <div class="floattext">
+    <h3>Сумма: <p> {{ getAllSum(cart) }} Р </p> </h3>
+    </div>
+    <mat-button-toggle routerLink="/order">Заказать</mat-button-toggle>
+  </div>
+</div>
+

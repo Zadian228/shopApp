@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="blockL">
+    <button mat-button routerLink="/home">Главная</button>
+
+    <button mat-button [matMenuTriggerFor]="man">Мужчины</button>
+    <button mat-button [matMenuTriggerFor]="woman">Женщины</button>
+
+    <mat-menu #man="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="manShoes" routerLink="/man/man-shoes">Обувь</button>
+      <button mat-menu-item [matMenuTriggerFor]="manClothes" routerLink="/man/man-clothes">Одежда</button>
+      <button mat-menu-item [matMenuTriggerFor]="manAccessory" routerLink="/man/man-accessory">Аксессуары</button>
+    </mat-menu>
+
+    <mat-menu #woman="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="womanShoes" routerLink="/woman/woman-shoes">Обувь</button>
+      <button mat-menu-item [matMenuTriggerFor]="womanClothes" routerLink="/woman/woman-clothes">Одежда</button>
+      <button mat-menu-item [matMenuTriggerFor]="womanAccessory" routerLink="/woman/woman-accessory">Аксессуары</button>
+    </mat-menu>
+
+    <mat-menu #manAccessory="matMenu">
+      <button mat-menu-item  routerLink="/man/man-accessory/man-ties">Галстуки</button>
+      <button mat-menu-item  routerLink="/man/man-accessory/man-watch">Часы</button>
+    </mat-menu>
+
+    <mat-menu #manShoes="matMenu">
+      <button mat-menu-item routerLink="/man/man-shoes/man-boots">Ботинки</button>
+      <button mat-menu-item routerLink="/man/man-shoes/man-sneakers">Кроссовки</button>
+    </mat-menu>
+
+    <mat-menu #manClothes="matMenu">
+      <button mat-menu-item routerLink="/man/man-clothes/man-shirts">Рубашки</button>
+      <button mat-menu-item routerLink="/man/man-clothes/man-pants">Брюки</button>
+      <button mat-menu-item routerLink="/man/man-clothes/man-t-shirts">Футболки</button>
+    </mat-menu>
+
+
+    <mat-menu #womanShoes="matMenu">
+      <button mat-menu-item routerLink="/woman/woman-shoes/woman-shoe">Туфли</button>
+      <button mat-menu-item routerLink="/woman/woman-shoes/woman-ballet">Балетки</button>
+    </mat-menu>
+
+    <mat-menu #womanClothes="matMenu">
+      <button mat-menu-item routerLink="/woman/woman-clothes/woman-skirts">Юбки</button>
+      <button mat-menu-item routerLink="/woman/woman-clothes/woman-blouses-shirts">Блузки и рубашки</button>
+      <button mat-menu-item routerLink="/woman/woman-clothes/woman-pants">Брюки</button>
+    </mat-menu>
+
+    <mat-menu #womanAccessory="matMenu">
+      <button mat-menu-item routerLink="/woman/woman-accessory/woman-bags">Сумки</button>
+      <button mat-menu-item routerLink="/woman/woman-accessory/woman-scarves">Платки и шарфы</button>
+    </mat-menu>
+  </div>
+  <div class="blockR">
+
+    <button mat-button routerLink="/cart">Корзина
+      <span class="material-icons">
+        shopping_cart
+      </span>
+    </button>
+    <mat-form-field appearance="fill">
+      <mat-label>Поиск</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <span class="material-icons">
+      search
+    </span>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>

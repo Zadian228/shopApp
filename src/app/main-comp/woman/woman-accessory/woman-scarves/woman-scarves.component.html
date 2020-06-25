@@ -1,0 +1,19 @@
+<app-header></app-header>
+<br>
+<div class="features">
+  <div class="featurestext">
+    <h2>Женские Платки И Шарфы</h2>
+  </div>
+  <div class="featurebox">
+    <ul *ngFor="let womanScarve of womanScarves;">
+      <li class="feature-item">
+        <img src="{{ womanScarve.imgPath }}"
+             class="size-height" routerLink="woman-bags">
+        <br>
+        <p class="picture-text" routerLink="woman-bags">{{ womanScarve.name }}</p>
+        <br>
+        <p class="picture-text">{{ womanScarve.cash }} Р <button  mat-button (click)="addWomanScarvesToCart(womanScarve)">В корзину</button></p>
+      </li>
+    </ul>
+  </div>
+</div>

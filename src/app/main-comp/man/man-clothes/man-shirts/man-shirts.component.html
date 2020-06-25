@@ -1,0 +1,19 @@
+<app-header></app-header>
+<br>
+<div class="features">
+  <div class="featurestext">
+    <h2>Мужские Рубашки</h2>
+  </div>
+  <div class="featurebox">
+    <ul *ngFor="let manShirt of manShirts;">
+      <li class="feature-item">
+        <img src="{{ manShirt.imgPath }}"
+             class="size-height" routerLink="woman-bags">
+        <br>
+        <p class="picture-text" routerLink="woman-bags">{{ manShirt.name }}</p>
+        <br>
+        <p class="picture-text">{{ manShirt.cash }} Р <button  mat-button (click)="addManShirtsToCart(manShirt)">В корзину</button></p>
+      </li>
+    </ul>
+  </div>
+</div>
