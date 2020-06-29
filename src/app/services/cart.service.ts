@@ -27,4 +27,10 @@ export class CartService {
     this.cartChanged.next(this.cart.slice());
   }
 
+  deleteAllItems() {
+    this.cart = [];
+  }
+
+
+
 }

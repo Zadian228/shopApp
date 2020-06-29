@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ManService} from "../../../../services/man.service";
 import {Subscription} from "rxjs";
 import {Product} from "../../../../shared/interfaces";
@@ -9,7 +9,7 @@ import {CartService} from "../../../../services/cart.service";
   templateUrl: './man-boots.component.html',
   styleUrls: ['./man-boots.component.scss']
 })
-export class ManBootsComponent implements OnInit {
+export class ManBootsComponent implements OnInit, OnDestroy {
 
   constructor(private manService: ManService, private cartService: CartService) { }
 
@@ -28,6 +28,11 @@ export class ManBootsComponent implements OnInit {
 
   addManBootsToCart(manBoot) {
     this.cartService.cart.push(manBoot);
+  }
+
+
+  ngOnDestroy() {
+    this.subscribe.unsubscribe();
   }
 
 }

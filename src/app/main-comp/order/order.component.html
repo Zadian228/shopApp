@@ -2,6 +2,11 @@
 
 <div class="contOrder">
   <div class="features">
+
+    <button
+      routerLink="/cart"
+      >Назад</button>
+
     <mat-list role="list" *ngFor="let carts of cart;">
       <mat-list-item role="listitem">
         {{ carts.name }} {{ carts.cash }} P
@@ -42,13 +47,14 @@
           <input matInput type="number" id="phone" placeholder="Телефон" formControlName="phone">
         </mat-form-field>
         <br>
-        <mat-form-field appearance="fill">
-          <mat-label for="cash" disabled><h3>Сумма:  Р </h3></mat-label>
-          <input matInput type="number" id="cash" formControlName="cash">
-        </mat-form-field>
+        <div>
+          <h3>Сумма: <p> {{ getAllSum(this.cart) }} Р </p> </h3>
+        </div>
       </div>
 
-      <mat-button-toggle routerLink="/order-success" type="submit">Подтвердить Заказ</mat-button-toggle>
+      <button
+        [disabled]="orderForm.invalid "
+        type="submit">Подтвердить Заказ</button>
     </form>
   </div>
 </div>

@@ -1,0 +1,24 @@
+<app-header></app-header>
+
+
+<div class="contOrder">
+  <div class="features">
+    <h2>Ваши Заказы:</h2>
+
+    <mat-list role="list" *ngFor="let orders of order;"
+    >
+      <mat-list-item role="listitem">
+        {{ orders.firstName }} {{ orders.secondName }}
+        {{ orders.address }} {{ orders.city }}
+        {{ orders.email }} {{ orders.phone }}
+        {{ orders.cash }} Р
+        {{ orders.cart }}
+
+      </mat-list-item>
+    </mat-list>
+
+
+  </div>
+</div>
+
+

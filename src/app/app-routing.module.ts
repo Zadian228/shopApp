@@ -27,6 +27,7 @@ import {WomanScarvesComponent} from "./main-comp/woman/woman-accessory/woman-sca
 import {CartComponent} from "./main-comp/cart/cart.component";
 import {OrderComponent} from "./main-comp/order/order.component";
 import {OrderSuccessComponent} from "./main-comp/order-success/order-success.component";
+import {OrdersComponent} from "./main-comp/orders/orders.component";
 
 
 
@@ -59,6 +60,7 @@ const routes: Routes = [
   {path: 'woman/woman-accessory/woman-scarves', component: WomanScarvesComponent},
   {path: 'cart', component: CartComponent},
   {path: 'order', component: OrderComponent},
+  {path: 'orders', component: OrdersComponent},
   {path: 'order-success', component: OrderSuccessComponent}
 
 

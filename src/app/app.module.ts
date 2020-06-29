@@ -36,6 +36,7 @@ import { CartComponent } from './main-comp/cart/cart.component';
 import { OrderComponent } from './main-comp/order/order.component';
 import { OrderSuccessComponent } from './main-comp/order-success/order-success.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { OrdersComponent } from './main-comp/orders/orders.component';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     CartComponent,
     OrderComponent,
     OrderSuccessComponent,
+    OrdersComponent,
   ],
   imports: [
     FormsModule,

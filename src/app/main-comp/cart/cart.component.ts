@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Cart, Product} from "../../shared/interfaces";
 import {ManService} from "../../services/man.service";
 import {CartService} from "../../services/cart.service";
@@ -9,7 +9,7 @@ import {Subscription} from "rxjs";
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, OnDestroy {
 
   constructor(private manService: ManService, private cartService: CartService) { }
 
@@ -18,6 +18,7 @@ export class CartComponent implements OnInit {
 
   cart: Cart[];
 
+
   ngOnInit() {
     this.subscribe = this.cartService.cartChanged.subscribe( () => {
       this.cart = this.cartService.getCart();
@@ -25,6 +26,7 @@ export class CartComponent implements OnInit {
     this.cart = this.cartService.getCart();
     this.getAllSum(this.cart);
   }
+
 
   onDeleteCartItem(index: number) {
     this.cartService.deleteCartItem(index);
@@ -35,7 +37,12 @@ export class CartComponent implements OnInit {
       (accumulator, currentValue) => accumulator + currentValue.cash,
       this.initialValue
     );
-    return cart
+    return cart;
+  }
+
+
+  ngOnDestroy() {
+    this.subscribe.unsubscribe();
   }
 
 }
